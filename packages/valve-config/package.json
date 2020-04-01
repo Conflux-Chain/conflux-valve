@@ -1,0 +1,15 @@
+{
+  "name": "valve-config",
+  "version": "0.0.1-y.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ping.li@conflux-chain.org",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.2.3",
+    "toml": "^3.0.0"
+  }
+}

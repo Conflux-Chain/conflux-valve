@@ -1,0 +1,32 @@
+{
+  "private": false,
+  "name": "valve-artifactor",
+  "description": "A contract packager for Ethereum and Javascript",
+  "license": "MIT",
+  "author": "Tim Coulter",
+  "repository": "",
+  "version": "0.0.1-y.0",
+  "main": "./index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "conffle-contract-schema": "0.0.2-alpha.0",
+    "fs-extra": "6.0.1",
+    "lodash": "^4.17.13"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "valve-contract": "0.0.1-y.0",
+    "conflux-web": "1.2.2-alpha.0",
+    "debug": "^4.1.1",
+    "ganache-core": "2.5.7",
+    "mocha": "5.2.0",
+    "require-nocache": "^1.0.0",
+    "temp": "^0.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "73c2c49bf19245eba7e0436108a5b395dd5a0876"
+}

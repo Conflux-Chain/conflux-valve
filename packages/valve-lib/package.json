@@ -1,0 +1,52 @@
+{
+  "name": "valve-lib",
+  "version": "0.0.1-y.1",
+  "description": "lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc tape tests/*.js | tap-nyc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuis/valve.git"
+  },
+  "keywords": [
+    "conflux-dapp"
+  ],
+  "dependencies": {
+    "bn.js": "^5.0.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "valve-utils": "^0.0.1-y.0",
+    "conflux-web": "^0.1.22-alpha.0",
+    "esm": "^3.0.77",
+    "ethereumjs-vm": "^4.1.2",
+    "fs-extra": "^7.0.1",
+    "hdwallet-accounts": "0.0.1",
+    "inquirer": "^7.0.0",
+    "jayson": "^3.1.1",
+    "js-conflux-sdk": "^0.8.0-alpha",
+    "keythereum": "^1.0.4",
+    "mocha": "^5.0.0",
+    "opn": "^5.4.0",
+    "original-require": "^1.0.1",
+    "path": "^0.12.7",
+    "silly-datetime": "^0.1.2",
+    "solc": "^0.5.11"
+  },
+  "author": "ping.li@conflux-chain.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuis/valve/issues"
+  },
+  "homepage": "https://github.com/liuis/valve#readme",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "tap-nyc": "^1.0.3",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  },
+  "peerDependencies": {
+    "acorn": "^6.0.0"
+  }
+}
