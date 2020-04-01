@@ -1,0 +1,25 @@
+{
+  "name": "valve-blockchain-utils",
+  "version": "0.0.1-y.0",
+  "description": "Utilities for identifying and managing blockchains",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/truffle-conflux-blockchain-utils",
+  "keywords": [
+    "ethereum",
+    "truffle",
+    "blockchain"
+  ],
+  "author": "Tim Coulter <tim.coulter@consensys.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trufflesuite/truffle/issues"
+  },
+  "homepage": "https://github.com/trufflesuite/truffle/tree/master/packages/truffle-conflux-blockchain-utils#readme",
+  "gitHead": "73c2c49bf19245eba7e0436108a5b395dd5a0876",
+  "devDependencies": {
+    "mocha": "5.2.0"
+  }
+}

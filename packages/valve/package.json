@@ -1,0 +1,69 @@
+{
+    "name": "valve",
+    "version": "0.0.0-y.1",
+    "description": "commands for conflux-chain-dapp-js",
+    "main": "index.js",
+    "bin": {
+        "valve": "./valve.js"
+    },
+    "scripts": {
+        "test": "nyc tape tests/*.js | tap-nyc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/liuis/conflux-dapp-js.git"
+    },
+    "keywords": [
+        "conflux-dapp"
+    ],
+    "dependencies": {
+        "@truffle/error": "0.0.8",
+        "@truffle/expect": "0.0.13",
+        "@truffle/provisioner": "^0.2.0",
+        "bn.js": "^5.0.0",
+        "chai": "^4.1.2",
+        "chai-as-promised": "^7.1.1",
+        "commander": "^2.19.0",
+        "valve-contract": "^0.0.0-y.1",
+        "valve-utils": "^0.0.0-y.1",
+        "conflux-web": "^0.1.22-alpha.0",
+        "esm": "^3.0.77",
+        "ethereumjs-vm": "^4.1.2",
+        "fs-extra": "^8.1.0",
+        "hdwallet-accounts": "0.0.1",
+        "inquirer": "^7.0.0",
+        "jayson": "^3.1.1",
+        "js-conflux-sdk": "^0.8.0-alpha",
+        "keythereum": "^1.0.4",
+        "mocha": "^5.0.0",
+        "opn": "^5.4.0",
+        "original-require": "^1.0.1",
+        "path": "^0.12.7",
+        "silly-datetime": "^0.1.2",
+        "solc": "^0.5.11",
+        "truffle-conflux-artifactor": "0.0.2-alpha.0",
+        "truffle-conflux-box": "0.0.2-alpha.1",
+        "truffle-conflux-config": "0.0.2-alpha.0",
+        "truffle-conflux-migrate": "0.0.2-alpha.1",
+        "truffle-conflux-resolver": "0.0.2-alpha.3",
+        "truffle-conflux-workflow-compile": "0.0.2-alpha.0",
+        "web3": "^1.2.1",
+        "yargs": "^15.0.2"
+    },
+    "author": "ping.li@conflux-chain.org",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/liuis/conflux-dapp-js/issues"
+    },
+    "homepage": "https://github.com/liuis/conflux-dapp-js#readme",
+    "gitHead": "73c2c49bf19245eba7e0436108a5b395dd5a0876",
+    "devDependencies": {
+        "mkdirp": "^0.5.1",
+        "tap-nyc": "^1.0.3",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.11.0"
+    },
+    "peerDependencies": {
+        "acorn": "^6.0.0"
+    }
+}

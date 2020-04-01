@@ -1,0 +1,21 @@
+{
+  "name": "valve-utils",
+  "version": "0.0.1-y.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/config": "^1.2.1",
+    "bip39": "^3.0.2",
+    "crypto": "^1.0.1",
+    "ethereumjs-wallet": "^0.6.3",
+    "fs": "0.0.1-security",
+    "fs-extra": "^8.1.0",
+    "keccak": "^2.0.0",
+    "rlp": "^2.2.3"
+  }
+}

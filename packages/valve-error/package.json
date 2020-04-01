@@ -1,0 +1,21 @@
+{
+  "name": "valve-error",
+  "version": "0.0.1-y.0",
+  "description": "Simple module that allows native Error objects to be extended",
+  "main": "index.js",
+  "scripts": {},
+  "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/truffle-conflux-error",
+  "keywords": [
+    "ethereum",
+    "truffle",
+    "error",
+    "extendable"
+  ],
+  "author": "Tim Coulter <tim.coulter@consensys.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trufflesuite/truffle-conflux-error/issues"
+  },
+  "homepage": "https://github.com/trufflesuite/truffle-conflux-error#readme",
+  "gitHead": "73c2c49bf19245eba7e0436108a5b395dd5a0876"
+}

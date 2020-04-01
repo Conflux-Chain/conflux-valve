@@ -1,0 +1,34 @@
+{
+    "contractFile": "ConvertLib.sol",
+    "contractAddress": "",
+    "abi": [
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "conversionRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "convert",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "convertedAmount",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "pure",
+            "type": "function"
+        }
+    ],
+    "bytecode": "60a3610024600b82828239805160001a607314601757fe5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c806396e4ee3d146038575b600080fd5b605860048036036040811015604c57600080fd5b5080359060200135606a565b60408051918252519081900360200190f35b029056fea265627a7a72315820bbf459755d4d052c76dfeaa54c8a1a509988b917f84605fc4135d1ef6b1ac38964736f6c634300050e0032",
+    "linkReferences": {}
+}

@@ -1,0 +1,63 @@
+{
+  "name": "valve-contract",
+  "version": "0.0.1-y.0",
+  "description": "A better contract abstraction for Ethereum (formerly EtherPudding)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "debug": "DEBUG=ganache-core mocha",
+    "compile": "browserify ./index.js -i web3 -o ./dist/truffle-contract.js && uglifyjs ./dist/truffle-contract.js -o ./dist/truffle-contract.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trufflesuite/truffle-contract.git"
+  },
+  "keywords": [
+    "ethereum",
+    "truffle",
+    "contract",
+    "abstraction"
+  ],
+  "author": "Tim Coulter <tim.coulter@consensys.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trufflesuite/truffle-contract/issues"
+  },
+  "homepage": "https://github.com/trufflesuite/truffle-contract#readme",
+  "dependencies": {
+    "bignumber.js": "^9.0.0",
+    "bn.js": "^5.1.0",
+    "valve-lib": "^0.0.1-y.0",
+    "conflux-web": "1.2.2-alpha.0",
+    "ethereumjs-tx": "^2.1.1",
+    "ethjs-abi": "0.1.8",
+    "jayson": "^3.2.0",
+    "keccak": "^2.0.0",
+    "lodash": "^4.17.15",
+    "rlp": "^2.2.3",
+    "scrypt.js": "^0.3.0",
+    "secp256k1": "^3.7.1",
+    "truffle-blockchain-utils": "^0.0.5",
+    "truffle-contract-schema": "^2.0.1",
+    "truffle-error": "^0.0.3",
+    "web3-utils": "^1.2.4"
+  },
+  "devDependencies": {
+    "async": "2.6.1",
+    "browserify": "^14.0.0",
+    "chai": "4.1.2",
+    "debug": "^3.1.0",
+    "ganache-core": "2.1.0-beta.0",
+    "lodash": "4.17.10",
+    "mocha": "5.2.0",
+    "require-nocache": "^1.0.0",
+    "solc": "0.4.24",
+    "temp": "^0.8.3",
+    "uglify": "^0.1.5",
+    "uglify-js": "^2.7.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "73c2c49bf19245eba7e0436108a5b395dd5a0876"
+}

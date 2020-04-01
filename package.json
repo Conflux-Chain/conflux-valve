@@ -1,0 +1,59 @@
+{
+  "name": "valve",
+  "version": "0.0.1",
+  "description": "conflux init publish deploy smart contract ",
+  "main": "./packages/valve/valve.js",
+  "scripts": {
+    "test": "mocha ./test/**/*.js --timeout 0 --exit",
+    "link": "lerna bootstrap && cd packages/valve && yarn link"
+  },
+  "keywords": [
+    "valve",
+    "smart",
+    "contract"
+  ],
+  "author": "ping.li@conflux-chain.org",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/config": "^1.2.0",
+    "acorn": "^6.3.0",
+    "bip39": "^3.0.2",
+    "circular-json": "^0.5.9",
+    "crypto": "^1.0.1",
+    "ether-pudding": "^3.2.0",
+    "ethereumjs-wallet": "^0.6.3",
+    "fs": "0.0.1-security",
+    "json-stringify": "^1.0.0",
+    "request": "^2.88.0",
+    "shelljs": "^0.8.3",
+    "solc": "^0.5.11",
+    "tape": "^4.11.0",
+    "truffle-conflux-artifactor": "0.0.2-alpha.0",
+    "truffle-conflux-box": "0.0.2-alpha.1",
+    "truffle-conflux-config": "0.0.2-alpha.0",
+    "truffle-conflux-init": "0.0.1",
+    "truffle-conflux-migrate": "0.0.2-alpha.1",
+    "truffle-conflux-resolver": "0.0.2-alpha.3",
+    "truffle-conflux-workflow-compile": "0.0.2-alpha.0",
+    "web3": "^1.2.1",
+    "yargs": "^14.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^1.7.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-files": "^1.4.0",
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "lerna": "^3.14.1",
+    "mocha": "^5.0.0",
+    "promisify-child-process": "^2.1.2",
+    "sinon": "^7.1.1",
+    "tap-nyc": "^1.0.3",
+    "typescript": "^3.5.2"
+  }
+}
