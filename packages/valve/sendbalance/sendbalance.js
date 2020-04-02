@@ -68,7 +68,8 @@ async function sendcfx(address) {
 
 function package() {
     array = [];
-    for (var i = 0, len = 5; i < len; i++) {
+    //10 block maybe good, avoid "discarded due to a too stale nonce"
+    for (var i = 0, len = 10; i < len; i++) {
         array.push(
             new Promise((resolve, reject) =>
                 client.request('generateoneblock', [1, 300000], function(err, error, result) {

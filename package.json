@@ -1,5 +1,5 @@
 {
-  "name": "valve",
+  "name": "conflux-valve",
   "version": "0.0.1",
   "description": "conflux init publish deploy smart contract ",
   "main": "./packages/valve/valve.js",

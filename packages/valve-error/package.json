@@ -1,6 +1,6 @@
 {
   "name": "valve-error",
-  "version": "0.0.1-y.0",
+  "version": "0.0.1-y.1",
   "description": "Simple module that allows native Error objects to be extended",
   "main": "index.js",
   "scripts": {},

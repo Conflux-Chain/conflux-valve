@@ -17,8 +17,8 @@ Table of Contents
          * [Use a contract at a specific address](#use-a-contract-at-a-specific-address)
 # valve
 
-![Build Status](https://api.travis-ci.org/liuis/conflux-dapp-js.svg?branch=refactor) [![npm](https://img.shields.io/npm/dm/valve.svg)](https://www.npmjs.com/package/valve) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-[![npm version](https://badge.fury.io/js/valve.svg)](https://badge.fury.io/js/valve)
+![Build Status](https://api.travis-ci.org/liuis/conflux-dapp-js.svg?branch=refactor) [![npm](https://img.shields.io/npm/dm/valve.svg)](https://www.npmjs.com/package/conflux-valve) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![npm version](https://badge.fury.io/js/conflux-valve.svg)](https://badge.fury.io/js/conflux-valve)
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/liqiazero/conflux-chain.svg)](https://hub.docker.com/r/liqiazero/conflux-chain/)
 [![Docker Stars](https://img.shields.io/docker/stars/liqiazero/conflux-chain.svg)](https://hub.docker.com/r/liqiazero/conflux-chain/)
@@ -41,7 +41,7 @@ valve consists of 5 separated packages. There are two main packages.
 ## Installing
 
 ```javascript
-npm i -g valve
+npm i -g conflux-valve
 ```
 -----------------
 
@@ -50,7 +50,7 @@ npm i -g valve
 ### start a  local node
 Before you start you must locally run a our conflux chain node.
 If you want to build by yourself, just fellow this:
-https://github.com/liuis/conflux-local-network
+https://https://github.com/Conflux-Chain/conflux-docker
 
 ```bash
 docker pull liqiazero/conflux-chain:v0.2.4

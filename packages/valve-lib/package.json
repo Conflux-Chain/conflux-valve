@@ -17,7 +17,6 @@
     "bn.js": "^5.0.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "valve-utils": "^0.0.1-y.0",
     "conflux-web": "^0.1.22-alpha.0",
     "esm": "^3.0.77",
     "ethereumjs-vm": "^4.1.2",
@@ -32,7 +31,8 @@
     "original-require": "^1.0.1",
     "path": "^0.12.7",
     "silly-datetime": "^0.1.2",
-    "solc": "^0.5.11"
+    "solc": "^0.5.11",
+    "valve-utils": "^0.0.1-y.1"
   },
   "author": "ping.li@conflux-chain.org",
   "license": "ISC",
