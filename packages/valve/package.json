@@ -1,6 +1,6 @@
 {
     "name": "conflux-valve",
-    "version": "0.0.0-y.1",
+    "version": "0.0.1-y.1",
     "description": "commands for conflux-chain-dapp-js",
     "main": "index.js",
     "bin": {
@@ -24,8 +24,6 @@
         "chai": "^4.1.2",
         "chai-as-promised": "^7.1.1",
         "commander": "^2.19.0",
-        "valve-contract": "^0.0.0-y.1",
-        "valve-utils": "^0.0.0-y.1",
         "conflux-web": "^0.1.22-alpha.0",
         "esm": "^3.0.77",
         "ethereumjs-vm": "^4.1.2",
@@ -47,6 +45,8 @@
         "truffle-conflux-migrate": "0.0.2-alpha.1",
         "truffle-conflux-resolver": "0.0.2-alpha.3",
         "truffle-conflux-workflow-compile": "0.0.2-alpha.0",
+        "valve-contract": "^0.0.0-y.1",
+        "valve-utils": "^0.0.0-y.1",
         "web3": "^1.2.1",
         "yargs": "^15.0.2"
     },
