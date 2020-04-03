@@ -10,7 +10,7 @@ class Command {
     this.commands = commands;
     //console.log("commands:", commands);
     let args = yargs();
-    console.log("args:", args);
+    //console.log("args:", args);
     Object.keys(this.commands).forEach(function(command) {
       args = args.command(commands[command]);
     });

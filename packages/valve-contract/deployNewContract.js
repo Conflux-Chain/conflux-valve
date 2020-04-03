@@ -113,7 +113,7 @@ function package() {
             new Promise((resolve, reject) =>
                 client.request('generateoneblock', [1, 300000], function(err, error, result) {
                     if (err) reject(err);
-                    console.log("generateoneblock:", result);
+                    //console.log("generateoneblock:", result);
                     resolve("generateoneblock : " + result);
                 })
             )
@@ -136,7 +136,6 @@ function package() {
 async function localhost_waitBlock(txHash, solfile) {
     await package();
     await cfx.getTransactionReceipt(txHash).then(async(receipt) => {
-        console.log("receiptxxxxxxxxxxxxxxx:", receipt);
         if (receipt !== null) {
             cAddress = receipt["contractCreated"]
             console.log("Your contract has been deployed at :" + cAddress);
@@ -197,9 +196,9 @@ async function deployContract(address, privateKeys, name) {
             const account = cfx.Account(privateKeys);
             if (abi) {
                 const rawTransaction = account.signTransaction(txParams);
-                console.log('raw transaction: ', rawTransaction);
+                //console.log('raw transaction: ', rawTransaction);
                 const transactionHash = await cfx.sendRawTransaction(rawTransaction.serialize());
-                console.log('transaction hash from RPC: ', transactionHash);
+                //console.log('transaction hash from RPC: ', transactionHash);
                 await localhost_waitBlock(transactionHash, name + ".json")
                 //await cfx.sendRawTransaction(rawTransaction.serialize()).then(async(transactionHash) => {
                 //    console.log('147:transaction hash from RPC: ', transactionHash);
@@ -322,7 +321,6 @@ async function newContract(add, pk) {
     var contracts = RawData.noNeedlink.concat(RawData.Linked);
     console.log("new deployed contract order:", contracts)
     for (let x of contracts) {
-         console.log("start xxxxxxxxxxxxx: ", x);
          await deployContract(add, pk, x)
     }
     // await asyncForEach(contracts, async x => {

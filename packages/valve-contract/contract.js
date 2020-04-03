@@ -223,7 +223,7 @@ var contract = (function(module) {
         // warning : this function will be deploy the build dir all the contract ,get the new contract address
             await newContract(ad,pk);
             CtName = this.contractName;
-            console.log("Ctname: " + CtName);
+            console.log("deploy contract: " + CtName);
             var rp = './build/' + CtName + '.sol.json';
             var data = fs.readFileSync(rp);
             let RawData = JSON.parse(data);
