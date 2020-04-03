@@ -1,6 +1,6 @@
 {
     "name": "conflux-valve",
-    "version": "0.0.1-y.2",
+    "version": "0.0.1-y.3",
     "description": "commands for conflux-chain-dapp-js",
     "main": "index.js",
     "bin": {
