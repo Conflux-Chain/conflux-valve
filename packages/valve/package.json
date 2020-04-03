@@ -1,6 +1,6 @@
 {
     "name": "conflux-valve",
-    "version": "0.0.1-y.3",
+    "version": "0.0.1-y.4",
     "description": "commands for conflux-chain-dapp-js",
     "main": "index.js",
     "bin": {
@@ -45,7 +45,7 @@
         "truffle-conflux-migrate": "0.0.2-alpha.1",
         "truffle-conflux-resolver": "0.0.2-alpha.3",
         "truffle-conflux-workflow-compile": "0.0.2-alpha.0",
-        "valve-contract": "^0.0.1-y.1",
+        "valve-contract": "^0.0.1-y.4",
         "valve-utils": "^0.0.1-y.1",
         "web3": "^1.2.1",
         "yargs": "^15.0.2"

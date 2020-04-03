@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Tim Coulter",
   "repository": "",
-  "version": "0.0.1-y.1",
+  "version": "0.0.1-y.4",
   "main": "./index.js",
   "scripts": {
     "test": "mocha"
@@ -23,7 +23,7 @@
     "mocha": "5.2.0",
     "require-nocache": "^1.0.0",
     "temp": "^0.8.3",
-    "valve-contract": "^0.0.1-y.1"
+    "valve-contract": "^0.0.1-y.4"
   },
   "publishConfig": {
     "access": "public"
