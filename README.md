@@ -30,7 +30,7 @@ Table of Contents
 The framework makes the development of smart contracts in the conflux network pretty easy. It provides commands for    compilation, deployment of smart contracts, running a local node, local compiler and unit testing the contracts.
 
 valve consists of 5 separated packages. There are two main packages.
-- **valve** - This package is responsible for reading **Conffle** commands from the command line
+- **valve** - This package is responsible for reading **Valve** commands from the command line
 - **valve-contract** - installing this package will give you access to the Deployer, which gives you the ability to deploy    compiled contracts.
 - **valve-logger** - Using this package will give you the ability to print your historical deployments on the console.   
 - **valve-config** - This package is used as helper where all the necessary configuration files are included.
@@ -50,7 +50,7 @@ npm i -g conflux-valve
 ### start a  local node
 Before you start you must locally run a our conflux chain node.
 If you want to build by yourself, just fellow this:
-https://https://github.com/Conflux-Chain/conflux-docker
+[Conflux-Docker Repo](https://github.com/Conflux-Chain/conflux-docker)
 
 ```bash
 docker pull liqiazero/conflux-chain:v0.2.4
