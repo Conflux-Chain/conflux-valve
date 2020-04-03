@@ -213,8 +213,6 @@ example:
 
 #### Step5. valve  deploy 
 
-######  **default:**  
-wallet addressIndex[0] as the default deploy address
 
 Select the address and privatekey you want to deploy in the wallet.json file.
 
@@ -466,7 +464,7 @@ MetaCoin.at(contract_address).then(async function(instance) {
 
         console.log("account_one balance is :", result)
         console.log("--------------------------------")
-        coin.sendCoin(account_two, 3).then(async function(res) {
+        coin.sendCoin(account_two, 3, {form: 0xe1680683be13895b59c94eaf61818975a0d105dd, pk: "0x91594bd85fec9695a26ed630f536195b5f8c448560f46d68512e2efcd837d0ac"}).then(async function(res) {
                 console.log("send account_two 3 coins result:", res) //0 is success, 1 or 2 is something is wrong
                 coin.getBalance(account_two).then(function(re) {
                     console.log("account_two balance is : ", re)
@@ -491,7 +489,7 @@ MetaCoin.new(....).then(async function(instance) {
 
         console.log("account_one balance is :", result)
         console.log("--------------------------------")
-        coin.sendCoin(account_two, 3).then(async function(res) {
+        coin.sendCoin(account_two, 3, {form: 0xe1680683be13895b59c94eaf61818975a0d105dd, pk: "0x91594bd85fec9695a26ed630f536195b5f8c448560f46d68512e2efcd837d0ac"}).then(async function(res) {
                 console.log("send account_two 3 coins result:", res) //0 is success, 1 or 2 is something is wrong
                 coin.getBalance(account_two).then(function(re) {
                     console.log("account_two balance is : ", re)
