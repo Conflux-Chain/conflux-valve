@@ -357,6 +357,8 @@ contract MetaCoin {
 }
 
 ````
+### Use a contract at a specific address
+
 ```javascript
 valve(localhost_docker)> MetaCoin.
 MetaCoin.__defineGetter__      MetaCoin.__defineSetter__      MetaCoin.__lookupGetter__      MetaCoin.__lookupSetter__      MetaCoin.__proto__
@@ -388,7 +390,17 @@ ConvertLib.new                   ConvertLib.parallel              ConvertLib.pro
 ConvertLib.web3
 
 ```
-### Use a contract at a specific address
+#### myContract.at('0x1234....')
+
+```javascript
+valve(localhost_docker)> coin = await MetaCoin.at("0xe4daa3e81a8c7c67d868fe21d0070ba29d61e5c9")
+at what:  0xe4daa3e81a8c7c67d868fe21d0070ba29d61e5c9
+undefined
+valve(localhost_docker)> coin.getBalance("0xe1680683be13895b59c94eaf61818975a0d105dd")
+'9988'
+valve(localhost_docker)>
+```
+
 
 
 In the test directory, you can use/write javascript to test your contract.
@@ -398,7 +410,7 @@ cd test
 node mc.js / mc_new.js
 ````
 
-#### myContract.at('0x1234....')
+
 
 If you already have an address for a contract, you can create a new abstraction to represent the contract at that address.
 
@@ -478,6 +490,7 @@ MetaCoin.at(contract_address).then(async function(instance) {
 
 ````
 #### myContract.new('....')
+
 This function returns a Promise that resolves into a new instance of the contract abstraction at the newly deployed address.
 
 you can find the example in the test directory.
