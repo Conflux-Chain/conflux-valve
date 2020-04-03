@@ -8,10 +8,12 @@ const cfx = new Conflux({
     defaultGas: 1000000,
 });
 var Web3 = require("conflux-web");
-const newContract = require("valve-lib");
+//var newCt = require("valve-lib");
+var newContract = require("./deployNewContract").newContract;
 const webUtils = require("web3-utils");
 //var StatusError = require("./statuserror.js")
 var util = require("util");
+var fs = require("fs");
 var execute = require("./execute");
 //const bootstrap = require("./bootstrap");
 var contract = (function(module) {
@@ -216,11 +218,17 @@ var contract = (function(module) {
 
 
         },
-        new: function(){
+        new: async function(ad, pk){
         // try to new deploy, then get the new contract address,return new this(contract address); 
         // warning : this function will be deploy the build dir all the contract ,get the new contract address
-        let newAddress = newContract();
-        this.at(newAddress)
+            await newContract(ad,pk);
+            CtName = this.contractName;
+            console.log("deploy contract: " + CtName);
+            var rp = './build/' + CtName + '.sol.json';
+            var data = fs.readFileSync(rp);
+            let RawData = JSON.parse(data);
+            newAddress = RawData.contractAddress
+            this.at(newAddress)
 
         },
         parallel: function(arr, callback) {
@@ -346,25 +354,25 @@ var contract = (function(module) {
                     this._json.abi = val;
                 }
             },
-            address: {
-                get: function() {
-                    var address = this.address;
+            //address: {
+            //    get: function() {
+            //        var address = this.address;
 
 
-                    if (address == null) {
-                        throw new Error("Cannot find deployed address: " + this.contractName + " not deployed or address not set.");
-                    }
+            //        if (address == null) {
+            //            throw new Error("Cannot find deployed address: " + this.contractName + " not deployed or address not set.");
+            //        }
 
 
-                    return address;
-                },
-                set: function(val) {
-                    if (val == null) {
-                        throw new Error("Cannot set deployed address; malformed value: " + val);
-                    } // Finally, set the address.
-                    this.address = val;
-                }
-            },
+            //        return address;
+            //    },
+            //    set: function(val) {
+            //        if (val == null) {
+            //            throw new Error("Cannot set deployed address; malformed value: " + val);
+            //        } // Finally, set the address.
+            //        this.address = val;
+            //    }
+            //},
             bytecode: {
                 get: function() {
                     return this._json.bytecode;

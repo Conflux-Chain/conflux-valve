@@ -1,17 +1,16 @@
 const ReplManager = require("./repl");
 const Command = require("./command_task");
 // We don't load web3 temporarily
-//const ConfluxWeb = require('conflux-web');
+const ConfluxWeb = require('conflux-web');
 //const confluxWeb = new ConfluxWeb('http://0.0.0.0:12537');
-const { Conflux, util, provider } = require('js-conflux-sdk');
+const { Conflux, util} = require('js-conflux-sdk');
  const cfx = new Conflux({
     url: 'http://0.0.0.0:12537',
     defaultGasPrice: 100,
     defaultGas: 1000000,
     //logger: console,
   });
-//var provider = new ConfluxWeb.providers.HttpProvider("http://0.0.0.0:12537");
-var providerJs = provider("http://0.0.0.0:12537");
+var provider = new ConfluxWeb.providers.HttpProvider("http://0.0.0.0:12537");
 const provision = require("@truffle/provisioner");
 //load valve  contract object 
 const contract = require("valve-contract");
@@ -118,7 +117,7 @@ class Console extends EventEmitter {
                 bytecode: json.bytecode, // optional
                 address: json.contractAddress, // optional
             });
-            abstraction.setProvider(providerJs);
+            abstraction.setProvider(provider);
             if (typeof abstraction.currentProvider.sendAsync !== "function") {
                 abstraction.currentProvider.sendAsync = function() {
                     return abstraction.currentProvider.send.apply(abstraction.currentProvider, arguments);

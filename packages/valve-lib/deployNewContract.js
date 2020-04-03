@@ -1,6 +1,6 @@
 //const BN = require('bn.js');
 const jayson = require('jayson');
-const client = jayson.client.http('http://localhost:12537');
+const client = jayson.client.http('http://0.0.0.0:12537');
 const { Conflux, util} = require('js-conflux-sdk');
 const cfx = new Conflux({
     url: 'http://0.0.0.0:12537',
@@ -82,7 +82,6 @@ function sleep(ms) {
  * @returns {err| promise the new json} return the pretty format json 
  */
 async function writeJsonto(key, solfile, newValues) {
-    var fs = require('fs');
     var file = JSON.parse(fs.readFileSync(solpath + "/build/" + solfile, 'utf8'));
     file[key] = newValues;
     return new Promise(function(resolve, reject) {
@@ -96,6 +95,61 @@ async function writeJsonto(key, solfile, newValues) {
 
     })
 }
+
+/**
+ * want to package the block, try to 15, must be the promise
+ *
+ * @name package
+ * @function
+ * @access public
+ * @returns {Promise} Promise
+ */
+/**
+ */
+function package() {
+    array = [];
+    for (var i = 0, len = 15; i < len; i++) {
+        array.push(
+            new Promise((resolve, reject) =>
+                client.request('generateoneblock', [1, 300000], function(err, error, result) {
+                    if (err) reject(err);
+                    console.log("generateoneblock:", result);
+                    resolve("generateoneblock : " + result);
+                })
+            )
+        )
+
+    }
+    return Promise.all(array);
+}
+
+/**
+ * when the docker chain package the transaction, get the transaction receipt
+ *
+ * @name localhost_waitBlock
+ * @function
+ * @access public
+ * @param {hex } txHash transaction hex values
+ * @param {want to update the contract compiled sol.json file name} solfile contract name sol filename
+ * @returns {Promise resolve | reject} Promise return
+ */
+async function localhost_waitBlock(txHash, solfile) {
+    await package();
+    await cfx.getTransactionReceipt(txHash).then(async(receipt) => {
+        console.log("receiptxxxxxxxxxxxxxxx:", receipt);
+        if (receipt !== null) {
+            cAddress = receipt["contractCreated"]
+            console.log("Your contract has been deployed at :" + cAddress);
+            await writeJsonto("contractAddress", solfile, cAddress);
+            return Promise.resolve(cAddress);
+        } else {
+            return Promise.reject("generateBlock err, 15 blocks");
+        }
+    })
+
+}
+
+
 
 /**
  * deploy the compiled the contract to the conflux-chain 
@@ -121,9 +175,10 @@ async function deployContract(address, privateKeys, name) {
     //console.log("bytecode:", "0x" + fd.bytecode)
     code = "0x" + fd.bytecode;
     abi = fd.abi;
-    if (isHex(code)) {
+    if (isEmptyObject(fd.linkReferences)){
+    //if (isHex(code)) {
         //const add = confluxWeb.cfx.accounts.wallet[0].address;
-        return cfx.getTransactionCount(address).then(async(nonceValue) => {
+        await cfx.getTransactionCount(address).then(async(nonceValue) => {
             //console.log("nonceValue:", nonceValue)
             let gasPrice = (await cfx.getGasPrice()).toString();
             value = util.unit.fromCFXToDrip(0).toString();
@@ -143,10 +198,13 @@ async function deployContract(address, privateKeys, name) {
             if (abi) {
                 const rawTransaction = account.signTransaction(txParams);
                 console.log('raw transaction: ', rawTransaction);
-                return cfx.sendRawTransaction(rawTransaction.serialize()).then((transactionHash) => {
-                    console.log('transaction hash from RPC: ', transactionHash);
-                    localhost_waitBlock(transactionHash, solfile)
-                })
+                const transactionHash = await cfx.sendRawTransaction(rawTransaction.serialize());
+                console.log('transaction hash from RPC: ', transactionHash);
+                await localhost_waitBlock(transactionHash, name + ".json")
+                //await cfx.sendRawTransaction(rawTransaction.serialize()).then(async(transactionHash) => {
+                //    console.log('147:transaction hash from RPC: ', transactionHash);
+                //    await localhost_waitBlock(transactionHash, name + ".json")
+                //}).catch(console.error);
                 //await confluxWeb.cfx.signTransaction(txParams)
                 //    .then(async(encodedTransaction) => {
                 //        const {
@@ -165,7 +223,7 @@ async function deployContract(address, privateKeys, name) {
         //link 
         console.log("----------------------------------------------------")
         console.log("\n")
-        console.log("The bytecode is not a hex, you may be a reference to other sol file, try to link!!!")
+        console.log("The linkReferences is not empty object, you may be a reference to other sol file, try to link!!!")
 
         keys = Object.keys(fd.linkReferences)
         var tempJson = {};
@@ -189,7 +247,7 @@ async function deployContract(address, privateKeys, name) {
         await writeJsonto("bytecode", name + ".json", NewByteCode);
         let gasPrice = (await cfx.getGasPrice()).toString();
         value = util.unit.fromCFXToDrip(0).toString();
-        return cfx.getTransactionCount(address).then(async(nonceValue) => {
+        await cfx.getTransactionCount(address).then(async(nonceValue) => {
             const txParams = {
                 from: address,
                 nonce: nonceValue, // make nonce appropriate
@@ -205,11 +263,10 @@ async function deployContract(address, privateKeys, name) {
             const account = cfx.Account(privateKeys);
             if (abi) {
                 const rawTransaction = account.signTransaction(txParams);
-                console.log('raw transaction: ', rawTransaction);
-                return cfx.sendRawTransaction(rawTransaction.serialize()).then((transactionHash) => {
-                    console.log('transaction hash from RPC: ', transactionHash);
-                    localhost_waitBlock(transactionHash, solfile)
-                })
+                //console.log('raw transaction: ', rawTransaction);
+                const transactionHash = await cfx.sendRawTransaction(rawTransaction.serialize());
+                //console.log('transaction hash from RPC: ', transactionHash);
+                await localhost_waitBlock(transactionHash, name + ".json")
                 ////await deploy(txParams, abi, name + ".json");
                 //await confluxWeb.cfx.signTransaction(txParams)
                 //    .then(async(encodedTransaction) => {
@@ -229,58 +286,6 @@ async function deployContract(address, privateKeys, name) {
 
     }
 }
-
-/**
- * want to package the block, try to 15, must be the promise
- *
- * @name package
- * @function
- * @access public
- * @returns {Promise} Promise
- */
-/**
- */
-function package() {
-    array = [];
-    for (var i = 0, len = 15; i < len; i++) {
-        array.push(
-            new Promise((resolve, reject) =>
-                client.request('generateoneblock', [1, 300000], function(err, error, result) {
-                    if (err) reject(err);
-                    resolve("generateoneblock : " + result);
-                })
-            )
-        )
-
-    }
-    return Promise.all(array);
-}
-
-/**
- * when the docker chain package the transaction, get the transaction receipt
- *
- * @name localhost_waitBlock
- * @function
- * @access public
- * @param {hex } txHash transaction hex values
- * @param {want to update the contract compiled sol.json file name} solfile contract name sol filename
- * @returns {Promise resolve | reject} Promise return
- */
-async function localhost_waitBlock(txHash, solfile) {
-    await package();
-    await cfx.getTransactionReceipt(txHash).then(async(receipt) => {
-        if (receipt !== null) {
-            cAddress = receipt["contractCreated"]
-            console.log("Your contract has been deployed at :" + cAddress);
-            await writeJsonto("contractAddress", solfile, cAddress);
-            return Promise.resolve(cAddress);
-        } else {
-            return Promise.reject("generateBlock err, 15 blocks");
-        }
-    })
-
-}
-
 
 /**
  * paralle the array 
@@ -317,6 +322,7 @@ async function newContract(add, pk) {
     var contracts = RawData.noNeedlink.concat(RawData.Linked);
     console.log("new deployed contract order:", contracts)
     for (let x of contracts) {
+         console.log("start xxxxxxxxxxxxx: ", x);
          await deployContract(add, pk, x)
     }
     // await asyncForEach(contracts, async x => {
