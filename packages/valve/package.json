@@ -24,7 +24,7 @@
         "chai": "^4.1.2",
         "chai-as-promised": "^7.1.1",
         "commander": "^2.19.0",
-        "conflux-web": "^0.1.22-alpha.0",
+        "conflux-web": "1.2.2-alpha.0",
         "esm": "^3.0.77",
         "ethereumjs-vm": "^4.1.2",
         "fs-extra": "^8.1.0",
