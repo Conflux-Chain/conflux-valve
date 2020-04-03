@@ -312,37 +312,8 @@ valve(localhost_docker)> cfx.defaultGasPrice
 valve(localhost_docker)> (await cfx.getBalance("0xe1680683be13895b59c94eaf61818975a0d105dd")).toString()
 '199937499999800000000'
 ```
-```javascript
-valve(localhost_docker)> MetaCoin.
-MetaCoin.__defineGetter__      MetaCoin.__defineSetter__      MetaCoin.__lookupGetter__      MetaCoin.__lookupSetter__      MetaCoin.__proto__
-MetaCoin.hasOwnProperty        MetaCoin.isPrototypeOf         MetaCoin.propertyIsEnumerable  MetaCoin.toLocaleString        MetaCoin.valueOf
 
-MetaCoin.apply                 MetaCoin.bind                  MetaCoin.call                  MetaCoin.constructor           MetaCoin.toString
 
-MetaCoin._constructorMethods   MetaCoin._json                 MetaCoin._properties           MetaCoin._property_values      MetaCoin.abi
-MetaCoin.addProp               MetaCoin.address               MetaCoin.arguments             MetaCoin.at                    MetaCoin.bytecode
-MetaCoin.caller                MetaCoin.class_defaults        MetaCoin.clone                 MetaCoin.contractName          MetaCoin.contract_name
-MetaCoin.currentProvider       MetaCoin.deployed              MetaCoin.ens                   MetaCoin.length                MetaCoin.name
-MetaCoin.new                   MetaCoin.parallel              MetaCoin.prototype             MetaCoin.setProvider           MetaCoin.toJSON
-MetaCoin.web3
-
-valve(localhost_docker)> ConvertLib
-ConvertLib
-
-valve(localhost_docker)> ConvertLib.
-ConvertLib.__defineGetter__      ConvertLib.__defineSetter__      ConvertLib.__lookupGetter__      ConvertLib.__lookupSetter__      ConvertLib.__proto__
-ConvertLib.hasOwnProperty        ConvertLib.isPrototypeOf         ConvertLib.propertyIsEnumerable  ConvertLib.toLocaleString        ConvertLib.valueOf
-
-ConvertLib.apply                 ConvertLib.bind                  ConvertLib.call                  ConvertLib.constructor           ConvertLib.toString
-
-ConvertLib._constructorMethods   ConvertLib._json                 ConvertLib._properties           ConvertLib._property_values      ConvertLib.abi
-ConvertLib.addProp               ConvertLib.address               ConvertLib.arguments             ConvertLib.at                    ConvertLib.bytecode
-ConvertLib.caller                ConvertLib.class_defaults        ConvertLib.clone                 ConvertLib.contractName          ConvertLib.contract_name
-ConvertLib.currentProvider       ConvertLib.deployed              ConvertLib.ens                   ConvertLib.length                ConvertLib.name
-ConvertLib.new                   ConvertLib.parallel              ConvertLib.prototype             ConvertLib.setProvider           ConvertLib.toJSON
-ConvertLib.web3
-
-```
 
 ## Interacting with your contract
 
@@ -386,6 +357,37 @@ contract MetaCoin {
 }
 
 ````
+```javascript
+valve(localhost_docker)> MetaCoin.
+MetaCoin.__defineGetter__      MetaCoin.__defineSetter__      MetaCoin.__lookupGetter__      MetaCoin.__lookupSetter__      MetaCoin.__proto__
+MetaCoin.hasOwnProperty        MetaCoin.isPrototypeOf         MetaCoin.propertyIsEnumerable  MetaCoin.toLocaleString        MetaCoin.valueOf
+
+MetaCoin.apply                 MetaCoin.bind                  MetaCoin.call                  MetaCoin.constructor           MetaCoin.toString
+
+MetaCoin._constructorMethods   MetaCoin._json                 MetaCoin._properties           MetaCoin._property_values      MetaCoin.abi
+MetaCoin.addProp               MetaCoin.address               MetaCoin.arguments             MetaCoin.at                    MetaCoin.bytecode
+MetaCoin.caller                MetaCoin.class_defaults        MetaCoin.clone                 MetaCoin.contractName          MetaCoin.contract_name
+MetaCoin.currentProvider       MetaCoin.deployed              MetaCoin.ens                   MetaCoin.length                MetaCoin.name
+MetaCoin.new                   MetaCoin.parallel              MetaCoin.prototype             MetaCoin.setProvider           MetaCoin.toJSON
+MetaCoin.web3
+
+valve(localhost_docker)> ConvertLib
+ConvertLib
+
+valve(localhost_docker)> ConvertLib.
+ConvertLib.__defineGetter__      ConvertLib.__defineSetter__      ConvertLib.__lookupGetter__      ConvertLib.__lookupSetter__      ConvertLib.__proto__
+ConvertLib.hasOwnProperty        ConvertLib.isPrototypeOf         ConvertLib.propertyIsEnumerable  ConvertLib.toLocaleString        ConvertLib.valueOf
+
+ConvertLib.apply                 ConvertLib.bind                  ConvertLib.call                  ConvertLib.constructor           ConvertLib.toString
+
+ConvertLib._constructorMethods   ConvertLib._json                 ConvertLib._properties           ConvertLib._property_values      ConvertLib.abi
+ConvertLib.addProp               ConvertLib.address               ConvertLib.arguments             ConvertLib.at                    ConvertLib.bytecode
+ConvertLib.caller                ConvertLib.class_defaults        ConvertLib.clone                 ConvertLib.contractName          ConvertLib.contract_name
+ConvertLib.currentProvider       ConvertLib.deployed              ConvertLib.ens                   ConvertLib.length                ConvertLib.name
+ConvertLib.new                   ConvertLib.parallel              ConvertLib.prototype             ConvertLib.setProvider           ConvertLib.toJSON
+ConvertLib.web3
+
+```
 ### Use a contract at a specific address
 
 
