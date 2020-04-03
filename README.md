@@ -201,8 +201,7 @@ Your contract has been deployed at :0xae2b17be6f7d590510fa7db89f86c02f55e73d2a
 
 ```javascript
  Home> valve console                                                                                                   
-``
-
+```
 ```javascript
 valve(localhost_docker)> cfx.
 cfx.__defineGetter__                   cfx.__defineSetter__                   cfx.__lookupGetter__                   cfx.__lookupSetter__
